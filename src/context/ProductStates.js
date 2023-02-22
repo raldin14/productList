@@ -32,13 +32,11 @@ const ProductState = props => {
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
-        console.log(response.data);
       dispatch({
         type: SEARCH_PRODUCT_SUCCESS,
         payload: response.data,
       });
     });
-    console.log(state.products);
   }, []);
 
   return <ProductContext.Provider value={{

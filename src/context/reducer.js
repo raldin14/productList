@@ -21,7 +21,6 @@ const reducer = (state, action) => {
         filtered: null,
       };
     case FILTER_PRODUCT_REQUEST:
-      console.log(state, action.payload,"filtering");
       return {
         ...state,
         loading: false,
