@@ -1,12 +1,22 @@
-import React,{useState} from "react";
+import React,{useContext,useState} from "react";
 import Card from "../UIElements/Card";
+import ProductContext from "../../context/productContext";
 
 const Search = props => {
+    const productContext = useContext(ProductContext);
+    const {filterProduct, clearFilter} = productContext;
+
     const [search, setSearch] = useState('');
 
     const handlerEvent = (event) => {
       setSearch(event);
-      props.handlersearch(event);
+
+      if(search !== ''){
+        filterProduct(search);
+      }else{
+        clearFilter();
+      }
+      //props.handlersearch(event);
     };
 
     return (
