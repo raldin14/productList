@@ -12,12 +12,11 @@ const baseURL = "https://fakestoreapi.com/products";
 const initialState = {
   loading: true,
   products: [],
-  errorMessage: null,
 };
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { products, errorMessage, loading } = state;
+  const { products, loading } = state;
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {

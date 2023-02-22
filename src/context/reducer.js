@@ -4,7 +4,6 @@ const reducer = (state, action) => {
         return {
           ...state,
           loading: true,
-          errorMessage: null,
         };
       case "SEARCH_PRODUCT_SUCCESS":
         return {
